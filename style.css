@@ -1,0 +1,99 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden;
+  background-position: center;
+  background-size: cover;
+  transition: 0.3s;
+}
+body::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: -1;
+}
+.slider-content {
+  position: absolute;
+  box-shadow: 0 3px 6px rgb(0 0 0 / 16%), 0 3px 6px rgb(0 0 0 / 23%);
+  height: 70vh;
+  width: 70vw;
+  position: relative;
+  overflow: hidden;
+  z-index: 2;
+}
+.slide {
+  opacity: 1; /* buni o'zgartirishing mumkin*/
+  height: 100vh;
+  width: 100vw;
+  background-position: center;
+  background-size: cover;
+  top: -15vh;
+  left: -15vw;
+  transition: 0.3s ease;
+  z-index: 2;
+  color: white;
+}
+h1 {
+  position: absolute;
+  left: 12vw;
+  top: 10vw;
+  font-size: 50px;
+}
+.slide.active {
+  opacity: -1;
+}
+.left-arrow {
+  left: calc(15vw - 90px);
+  z-index: 1;
+}
+#left:hover,
+#right:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+.arrow {
+  position: fixed;
+  background-color: transparent;
+  color: #fff;
+  padding: 20px;
+  font-size: 50px;
+  border: 2px solid orange;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+.arrow:focus {
+  outline: 0;
+}
+
+.right-arrow {
+  right: calc(15vw - 90px);
+  z-index: 1;
+}
+#left:disabled,
+#right:disabled {
+  background-color: rgb(153, 151, 151);
+  cursor: not-allowed;
+}
+.btn-close-white{
+    transform: scale(3);
+    position: absolute;
+    top: 100px;
+    right: 100px;
+}
